@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_sections_emails",
+  "info": {
+    "displayName": "Email",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "emailPlaceHolder": {
+      "type": "string"
+    },
+    "namePlaceHolder": {
+      "type": "string"
+    },
+    "messagePlaceHolder": {
+      "type": "string"
+    },
+    "buttonText": {
+      "type": "string"
+    }
+  }
+}
