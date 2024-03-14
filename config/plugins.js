@@ -17,7 +17,7 @@ module.exports = ({ env }) => ({
   "netlify-deployments": {
     enabled: true,
     config: {
-      accessToken: "nfp_S3cWuGUwobtqJp8gYe9eoBihJiH6dXCe89a2",
+      accessToken: process.env.NETLIFY_DEPLOYMENTS_PLUGIN_ACCESS_TOKEN,
       sites: [
         {
           name: "goshengroup",
