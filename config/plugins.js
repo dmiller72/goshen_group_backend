@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 module.exports = ({ env }) => ({
   seo: {
     enabled: true,
@@ -30,3 +31,23 @@ module.exports = ({ env }) => ({
   //   },
   // },
 });
+=======
+module.exports = ({ env }) => ({
+  seo: {
+    enabled: true,
+  },
+  email: {
+    config: {
+      provider: "sendgrid",
+      providerOptions: {
+        apiKey: env("SENDGRID_API_KEY"),
+      },
+      settings: {
+        defaultFrom: "mtech.websites@gmail.com",
+        defaultReplyTo: "mtech.websites@gmail.com",
+      },
+    },
+  },
+
+});
+>>>>>>> 0d42bd8e679f1b4f8eadd897119ce98f077d422a
