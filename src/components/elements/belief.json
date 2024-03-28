@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_elements_beliefs",
+  "info": {
+    "displayName": "belief"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

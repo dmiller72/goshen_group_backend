@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_sections_beliefs",
+  "info": {
+    "displayName": "Beliefs",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "belief": {
+      "displayName": "belief",
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.belief"
+    }
+  }
+}

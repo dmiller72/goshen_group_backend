@@ -1188,7 +1188,10 @@ export interface ApiPagePage extends Schema.CollectionType {
         'sections.donations-group',
         'sections.social-media',
         'sections.social',
-        'sections.email'
+        'sections.email',
+        'sections.leadership',
+        'sections.beliefs',
+        'sections.store'
       ]
     > &
       Attribute.SetPluginOptions<{

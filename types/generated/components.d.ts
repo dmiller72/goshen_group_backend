@@ -1,5 +1,16 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ElementsBelief extends Schema.Component {
+  collectionName: 'components_elements_beliefs';
+  info: {
+    displayName: 'belief';
+  };
+  attributes: {
+    text: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
 export interface ElementsDonate extends Schema.Component {
   collectionName: 'components_slices_donates';
   info: {
@@ -97,6 +108,18 @@ export interface ElementsGiving extends Schema.Component {
     firstname: Attribute.String;
     lastname: Attribute.String;
     email: Attribute.String;
+  };
+}
+
+export interface ElementsLeader extends Schema.Component {
+  collectionName: 'components_elements_leader_s';
+  info: {
+    displayName: 'leader ';
+  };
+  attributes: {
+    media: Attribute.Media;
+    name: Attribute.String;
+    description: Attribute.Text;
   };
 }
 
@@ -304,6 +327,17 @@ export interface MetaMetadata extends Schema.Component {
   };
 }
 
+export interface SectionsBeliefs extends Schema.Component {
+  collectionName: 'components_sections_beliefs';
+  info: {
+    displayName: 'Beliefs';
+    description: '';
+  };
+  attributes: {
+    belief: Attribute.Component<'elements.belief', true>;
+  };
+}
+
 export interface SectionsBottomActions extends Schema.Component {
   collectionName: 'components_slices_bottom_actions';
   info: {
@@ -491,6 +525,18 @@ export interface SectionsLeadForm extends Schema.Component {
   };
 }
 
+export interface SectionsLeadership extends Schema.Component {
+  collectionName: 'components_sections_leaderships';
+  info: {
+    displayName: 'Leadership';
+    description: '';
+  };
+  attributes: {
+    heading: Attribute.String;
+    leader: Attribute.Component<'elements.leader', true>;
+  };
+}
+
 export interface SectionsLiveStream extends Schema.Component {
   collectionName: 'components_sections_live_streams';
   info: {
@@ -565,6 +611,18 @@ export interface SectionsSocial extends Schema.Component {
   };
   attributes: {
     delete: Attribute.String;
+  };
+}
+
+export interface SectionsStore extends Schema.Component {
+  collectionName: 'components_sections_stores';
+  info: {
+    displayName: 'store';
+    description: '';
+  };
+  attributes: {
+    text: Attribute.String;
+    media: Attribute.Media;
   };
 }
 
@@ -663,12 +721,14 @@ export interface SharedVideoEmbed extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'elements.belief': ElementsBelief;
       'elements.donate': ElementsDonate;
       'elements.feature-column': ElementsFeatureColumn;
       'elements.feature-row': ElementsFeatureRow;
       'elements.feature': ElementsFeature;
       'elements.footer-section': ElementsFooterSection;
       'elements.giving': ElementsGiving;
+      'elements.leader': ElementsLeader;
       'elements.logos': ElementsLogos;
       'elements.notification-banner': ElementsNotificationBanner;
       'elements.plan': ElementsPlan;
@@ -682,6 +742,7 @@ declare module '@strapi/types' {
       'links.link': LinksLink;
       'links.social-link': LinksSocialLink;
       'meta.metadata': MetaMetadata;
+      'sections.beliefs': SectionsBeliefs;
       'sections.bottom-actions': SectionsBottomActions;
       'sections.carousel': SectionsCarousel;
       'sections.custom-rich-text': SectionsCustomRichText;
@@ -695,11 +756,13 @@ declare module '@strapi/types' {
       'sections.hero': SectionsHero;
       'sections.large-video': SectionsLargeVideo;
       'sections.lead-form': SectionsLeadForm;
+      'sections.leadership': SectionsLeadership;
       'sections.live-stream': SectionsLiveStream;
       'sections.pricing': SectionsPricing;
       'sections.rich-text': SectionsRichText;
       'sections.social-media': SectionsSocialMedia;
       'sections.social': SectionsSocial;
+      'sections.store': SectionsStore;
       'sections.testimonials-group': SectionsTestimonialsGroup;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;

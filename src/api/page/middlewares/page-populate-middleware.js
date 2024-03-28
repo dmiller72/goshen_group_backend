@@ -16,12 +16,33 @@ const populate = {
       buttons: {
         populate: true,
       },
+      store: {
+        populate: {
+          fields: ["text"],
+          media: {
+            fields: ["url", "alternativeText", "caption", "width", "height"],
+          },
+        },
+      },
       feature: {
         populate: {
           fields: ["title", "description", "showLink", "newTab", "url", "text"],
           media: {
             fields: ["url", "alternativeText", "caption", "width", "height"],
           },
+        },
+      },
+      leader: {
+        populate: {
+          fields: ["name", "description"],
+          media: {
+            fields: ["url", "alternativeText", "caption", "width", "height"],
+          },
+        },
+      },
+      belief: {
+        populate: {
+          fields: ["text", "description"],
         },
       },
       social: {

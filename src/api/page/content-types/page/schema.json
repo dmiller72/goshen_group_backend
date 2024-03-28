@@ -46,7 +46,10 @@
         "sections.donations-group",
         "sections.social-media",
         "sections.social",
-        "sections.email"
+        "sections.email",
+        "sections.leadership",
+        "sections.beliefs",
+        "sections.store"
       ],
       "pluginOptions": {
         "i18n": {
