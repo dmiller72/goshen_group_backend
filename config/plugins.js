@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 module.exports = ({ env }) => ({
   seo: {
     enabled: true,
@@ -15,39 +14,28 @@ module.exports = ({ env }) => ({
       },
     },
   },
-  // "netlify-deployments": {
-  //   enabled: true,
-  //   config: {
-  //     accessToken: process.env.NETLIFY_DEPLOYMENTS_PLUGIN_ACCESS_TOKEN,
-  //     sites: [
-  //       {
-  //         name: "goshengroup",
-  //         id: "cf04d56d-7b42-4ce1-bed5-604d64005303",
-  //         buildHook:
-  //           "https://api.netlify.com/build_hooks/65f34ed8723a5a1e86b0b3bc",
-  //         branch: "main", // optional
-  //       },
-  //     ],
-  //   },
-  // },
-});
-=======
-module.exports = ({ env }) => ({
-  seo: {
-    enabled: true,
-  },
-  email: {
+  upload: {
     config: {
-      provider: "sendgrid",
+      provider: "aws-s3",
       providerOptions: {
-        apiKey: env("SENDGRID_API_KEY"),
+        s3Options: {
+          accessKeyId: env("AWS_ACCESS_KEY_ID"),
+          secretAccessKey: env("AWS_ACCESS_SECRET"),
+          region: env("AWS_REGION"),
+          params: {
+            Bucket: env("AWS_BUCKET_NAME"),
+          },
+        },
       },
-      settings: {
-        defaultFrom: "mtech.websites@gmail.com",
-        defaultReplyTo: "mtech.websites@gmail.com",
+      // These parameters could solve issues with ACL public-read access — see [this issue](https://github.com/strapi/strapi/issues/5868) for details
+      actionOptions: {
+        upload: {
+          ACL: null,
+        },
+        uploadStream: {
+          ACL: null,
+        },
       },
     },
   },
-
 });
->>>>>>> 0d42bd8e679f1b4f8eadd897119ce98f077d422a
